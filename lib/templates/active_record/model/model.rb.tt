@@ -1,0 +1,31 @@
+<% module_namespacing do -%>
+  class <%= class_name %> < ApplicationRecord
+    # Includes
+
+    # Attributes
+
+    # Associations
+
+    # Delegates
+
+    # Constants
+
+    # Scopes
+
+    # Callbacks
+
+    # Validations
+
+    # Class methods
+
+    # Instance Public methods
+
+    private
+
+    # Validations
+
+    # Callbacks
+
+    # Methods
+  end
+  <% end -%>

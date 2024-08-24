@@ -4,6 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 7.2.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+gem "pg_search"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -23,7 +24,7 @@ gem "jb"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -41,14 +42,19 @@ gem "pundit"
 # gem "shrine"
 
 # Add Pry and Pry-Rails for debugging
-gem 'pry'
-gem 'pry-rails'
+gem "pry"
+gem "pry-rails"
+
+# Devise
+gem "devise"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "debug", platforms: %i[mri mingw mswin x64_mingw], require: "debug/prelude"
   gem "rspec-rails", "~> 6.0"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
   gem "annotate" # Annotate Rails classes with schema info
   gem "rails-erd" # Generate entity-relationship diagrams for Rails applications
+  gem "factory_bot_rails" # Add FactoryBot for fixture replacement
+  gem "faker"
 end

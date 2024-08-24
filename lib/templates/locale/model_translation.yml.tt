@@ -1,0 +1,13 @@
+<%= language %>:
+  activerecord:
+    models:
+      <%= file_name.singularize %>:
+        one: Singularized name
+        other: Pluralized name
+    attributes:
+      <%= file_name.singularize %>:
+        # this section shold be removed if there are no specific attributes to translate.
+    errors:
+      models:
+        <%= file_name.singularize %>:
+          # this section shold be removed if there are no specific errors to translate.
