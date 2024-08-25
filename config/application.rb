@@ -14,7 +14,7 @@ require "action_cable/engine"
 
 Bundler.require(*Rails.groups)
 
-module PrimeFinanceApi
+module MoneasyApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
