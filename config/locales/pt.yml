@@ -6,6 +6,7 @@ pt:
         blank: "não pode ficar em branco"
         present: "não pode ser preenchido"
         invalid: "é inválido"
+        required: "é obrigatório"
         confirmation: "não confere com a confirmação"
         accepted: "deve ser aceito"
         empty: "não pode estar vazio"

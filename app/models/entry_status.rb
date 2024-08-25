@@ -2,7 +2,7 @@
 #
 # Table name: entry_statuses
 #
-#  id         :bigint           not null, primary key
+#  id         :uuid             not null, primary key
 #  key        :string           not null
 #  name       :string           not null
 #  created_at :datetime         not null
@@ -19,6 +19,7 @@ class EntryStatus < ApplicationRecord
   # Attributes
 
   # Associations
+  has_many :entries, dependent: :restrict_with_error
 
   # Delegates
 

@@ -2,7 +2,7 @@
 #
 # Table name: entry_types
 #
-#  id         :bigint           not null, primary key
+#  id         :uuid             not null, primary key
 #  key        :string           not null
 #  name       :string           not null
 #  created_at :datetime         not null

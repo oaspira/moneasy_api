@@ -27,12 +27,16 @@ class User < ApplicationRecord
   # Constants
 
   # Associations
+  has_many :yearly_budgets
+  has_many :monthly_budgets, dependent: :restrict_with_error
+  has_many :entries, dependent: :restrict_with_error
 
   # Delegates
 
   # Validations
 
   # Callbacks
+  after_create :create_yearly_budget
 
   # Scopes
   pg_search_scope :pg_search,
@@ -50,6 +54,9 @@ class User < ApplicationRecord
   # Validations
 
   # Callbacks
+  def create_yearly_budget
+    debugger
+  end
 
   # Methods
 end

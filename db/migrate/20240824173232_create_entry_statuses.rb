@@ -1,6 +1,6 @@
 class CreateEntryStatuses < ActiveRecord::Migration[7.2]
   def change
-    create_table :entry_statuses do |t|
+    create_table :entry_statuses, id: :uuid do |t|
       t.string :key, null: false
       t.string :name, null: false
 
