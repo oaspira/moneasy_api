@@ -50,6 +50,7 @@ class YearlyBudget < ApplicationRecord
   # Scopes
 
   # Callbacks
+  after_create :create_monthly_budgets
 
   # Validations
   validates :year, presence: true
@@ -65,6 +66,9 @@ class YearlyBudget < ApplicationRecord
   # Validations
 
   # Callbacks
+  def create_monthly_budgets
+    MonthlyBudget::CreateMonthlyBudget.call(self)
+  end
 
   # Methods
 end

@@ -20,7 +20,7 @@
 #
 class User < ApplicationRecord
   # Include
-  include PgSearch::Model
+  include Searchable
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -55,7 +55,7 @@ class User < ApplicationRecord
 
   # Callbacks
   def create_yearly_budget
-    debugger
+    YearlyBudget::CreateYearlyBudget.call(self)
   end
 
   # Methods
