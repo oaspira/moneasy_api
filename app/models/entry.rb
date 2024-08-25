@@ -46,9 +46,6 @@ class Entry < ApplicationRecord
   # Callbacks
 
   # Validations
-  # validates :year, presence: true
-  # validates :year, numericality: { only_integer: true }, uniqueness: { scope: [:user_id, :yearly_budget_id, :month] }
-  # validates :year, numericality: { greater_than_or_equal_to: 2000, less_than_or_equal_to: 10_000 }, on: [:create, :update]
 
   # Class methods
 
