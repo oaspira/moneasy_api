@@ -29,3 +29,4 @@ pt:
         exclusion: "está reservado"
         format: "não tem o formato esperado"
         exclusion_inclusion: "não deve estar incluído na lista"
+        item_not_found: "Registro não encontrado"
