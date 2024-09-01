@@ -1,0 +1,12 @@
+{
+  id: @entry.id,
+  description: @entry.description,
+  due_date: @entry.due_date,
+  value: @entry.value,
+  entry_category_id: @entry.entry_category_id,
+  entry_status_id: @entry.entry_status_id,
+  entry_type_id: @entry.entry_type_id,
+  monthly_budget_id: @entry.monthly_budget_id,
+  user_id: @entry.user_id,
+  yearly_budget_id: @entry.yearly_budget_id,
+}

@@ -1,6 +1,6 @@
 namespace :v1 do
   resources :entry_categories, only: [:index, :show, :create, :update, :destroy]
-  resources :entry_statuses, only: [:index, :show, :create, :update, :destroy]
+  resources :entry_statuses, only: [:index, :show]
   resources :entry_types, only: [:index, :show, :create, :update, :destroy]
   resources :entries, only: [:index, :show, :create, :update, :destroy]
   resources :monthly_budgets, only: [:index, :show, :create, :update, :destroy]

@@ -1,0 +1,5 @@
+{
+  id: @entry_type.id,
+  key: @entry_type.key,
+  name: @entry_type.name,
+}

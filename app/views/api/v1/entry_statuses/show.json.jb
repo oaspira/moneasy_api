@@ -1,0 +1,5 @@
+{
+  id: @entry_status.id,
+  key: @entry_status.key,
+  name: @entry_status.name,
+}

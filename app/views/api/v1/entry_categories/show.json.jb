@@ -1,0 +1,4 @@
+{
+  id: @entry_category.id,
+  description: @entry_category.description
+}

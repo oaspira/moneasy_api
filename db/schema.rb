@@ -18,12 +18,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_25_145503) do
     t.string "description", null: false
     t.decimal "value", precision: 15, scale: 2, null: false
     t.datetime "due_date"
-    t.bigint "entry_type_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "entry_category_id"
-    t.bigint "monthly_budget_id", null: false
-    t.bigint "yearly_budget_id", null: false
-    t.bigint "entry_status_id", null: false
+    t.uuid "entry_type_id", null: false
+    t.uuid "user_id", null: false
+    t.uuid "entry_category_id"
+    t.uuid "monthly_budget_id", null: false
+    t.uuid "yearly_budget_id", null: false
+    t.uuid "entry_status_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entry_category_id"], name: "index_entries_on_entry_category_id"
@@ -92,6 +92,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_25_145503) do
     t.index ["user_id"], name: "index_yearly_budgets_on_user_id"
   end
 
+  add_foreign_key "entries", "entry_categories"
+  add_foreign_key "entries", "entry_statuses"
+  add_foreign_key "entries", "entry_types"
+  add_foreign_key "entries", "monthly_budgets"
+  add_foreign_key "entries", "users"
+  add_foreign_key "entries", "yearly_budgets"
   add_foreign_key "monthly_budgets", "users"
   add_foreign_key "monthly_budgets", "yearly_budgets"
   add_foreign_key "yearly_budgets", "users"

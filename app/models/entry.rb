@@ -8,12 +8,12 @@
 #  value             :decimal(15, 2)   not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  entry_category_id :bigint
-#  entry_status_id   :bigint           not null
-#  entry_type_id     :bigint           not null
-#  monthly_budget_id :bigint           not null
-#  user_id           :bigint           not null
-#  yearly_budget_id  :bigint           not null
+#  entry_category_id :uuid
+#  entry_status_id   :uuid             not null
+#  entry_type_id     :uuid             not null
+#  monthly_budget_id :uuid             not null
+#  user_id           :uuid             not null
+#  yearly_budget_id  :uuid             not null
 #
 # Indexes
 #
@@ -23,6 +23,15 @@
 #  index_entries_on_monthly_budget_id  (monthly_budget_id)
 #  index_entries_on_user_id            (user_id)
 #  index_entries_on_yearly_budget_id   (yearly_budget_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (entry_category_id => entry_categories.id)
+#  fk_rails_...  (entry_status_id => entry_statuses.id)
+#  fk_rails_...  (entry_type_id => entry_types.id)
+#  fk_rails_...  (monthly_budget_id => monthly_budgets.id)
+#  fk_rails_...  (user_id => users.id)
+#  fk_rails_...  (yearly_budget_id => yearly_budgets.id)
 #
 class Entry < ApplicationRecord
   # Includes
