@@ -48,6 +48,10 @@ class MonthlyBudget < ApplicationRecord
   # Class methods
 
   # Instance Public methods
+  def monthly_sum
+    total = entries.sum(:value)
+    Money.new(total, "EUR").format
+  end
 
   private
 

@@ -48,6 +48,9 @@ gem "pry-rails"
 # Devise
 gem "devise"
 
+# Money
+gem "money"
+
 group :development, :test do
   gem "debug", platforms: %i[mri mingw mswin x64_mingw], require: "debug/prelude"
   gem "rspec-rails", "~> 6.0"

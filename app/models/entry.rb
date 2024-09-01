@@ -51,6 +51,12 @@ class Entry < ApplicationRecord
   # Constants
 
   # Scopes
+  scope :for_entry_type, ->(entry_type) { where(entry_type:) }
+  scope :for_user, ->(user) { where(user:) }
+  scope :for_entry_category, ->(entry_category) { where(entry_category:) }
+  scope :for_monthly_budget, ->(monthly_budget) { where(monthly_budget:) }
+  scope :for_yearly_budget, ->(yearly_budget) { where(yearly_budget:) }
+  scope :for_entry_status, ->(entry_status) { where(entry_status:) }
 
   # Callbacks
 
