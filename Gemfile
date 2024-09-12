@@ -57,7 +57,7 @@ gem 'rack-cors'
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw mswin x64_mingw], require: "debug/prelude"
-  gem "rspec-rails", "~> 6.0"
+  gem "rspec-rails", "~> 7.0"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
   gem "annotate" # Annotate Rails classes with schema info
