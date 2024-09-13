@@ -2,7 +2,7 @@ class Api::V1::EntriesController < ApplicationController
   before_action :set_entry, only: %i[show update destroy]
 
   def index
-    authorize Entry
+    # authorize Entry
 
     @entries = Entry.all
     render json: @entries, status: :ok
@@ -12,7 +12,7 @@ class Api::V1::EntriesController < ApplicationController
   end
 
   def create
-    authorize Entry
+    # authorize Entry
     @entry = Entry.new(entry_params)
 
     if @entry.save
@@ -65,7 +65,7 @@ class Api::V1::EntriesController < ApplicationController
     entry = Entry.find_by(id: params[:id])
     return render json: { errors: t('activerecord.errors.messages.item_not_found') }, status: :not_found unless entry
 
-    authorize entry
+    # authorize entry
     @entry = entry
   end
 end

@@ -2,7 +2,7 @@ class Api::V1::EntryCategoriesController < ApplicationController
   before_action :set_entry_category, only: %i[show update destroy]
 
   def index
-    authorize EntryCategory
+    # authorize EntryCategory
 
     @entry_categories = EntryCategory.all
     render json: @entry_categories, status: :ok
@@ -12,7 +12,7 @@ class Api::V1::EntryCategoriesController < ApplicationController
   end
 
   def create
-    authorize EntryCategory
+    # authorize EntryCategory
     @entry_category = EntryCategory.new(entry_category_params)
 
     if @entry_category.save
@@ -55,7 +55,7 @@ class Api::V1::EntryCategoriesController < ApplicationController
     entry_category = EntryCategory.find_by(id: params[:id])
     return render json: { errors: t('activerecord.errors.messages.item_not_found') }, status: :not_found unless entry_category
 
-    authorize EntryCategory
+    # authorize EntryCategory
     @entry_category = entry_category
   end
 end

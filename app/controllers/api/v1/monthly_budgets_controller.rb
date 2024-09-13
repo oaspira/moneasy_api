@@ -11,7 +11,7 @@ class Api::V1::MonthlyBudgetsController < ApplicationController
     monthly_budget = MonthlyBudget.find_by(id: params[:id])
     return render json: { errors: t('activerecord.errors.messages.item_not_found') }, status: :not_found unless monthly_budget
 
-    authorize MonthlyBudget
+    # authorize MonthlyBudget
     @monthly_budget = monthly_budget
   end
 end
