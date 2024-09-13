@@ -51,6 +51,10 @@ gem "devise"
 # Money
 gem "money"
 
+# Cors
+gem 'rack-cors'
+
+
 group :development, :test do
   gem "debug", platforms: %i[mri mingw mswin x64_mingw], require: "debug/prelude"
   gem "rspec-rails", "~> 6.0"

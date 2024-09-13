@@ -7,6 +7,8 @@ services:
     ports:
       - "3000:3000"
     command: "bundle exec puma -C config/puma.rb"
+    volumes:
+      - ./:/rails
 
   db:
     image: docker.io/library/postgres
