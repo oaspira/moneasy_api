@@ -1,10 +1,12 @@
 class Api::V1::EntriesController < ApplicationController
   before_action :set_entry, only: %i[show update destroy]
+  before_action :set_monthly_budget, only: %i[index]
 
   def index
     # authorize Entry
 
     @entries = Entry.all
+    @entries = @entries.for_monthly_budget(@monthly_budget) if params[:reference_month].present?
     render json: @entries, status: :ok
   end
 
@@ -67,5 +69,9 @@ class Api::V1::EntriesController < ApplicationController
 
     # authorize entry
     @entry = entry
+  end
+
+  def set_monthly_budget
+    @monthly_budget = MonthlyBudget.find_by(month: params[:reference_month])
   end
 end
