@@ -48,6 +48,10 @@ class Api::V1::EntriesController < ApplicationController
     end
   end
 
+  def charts
+    @entries = Entry.for_entry_type(params[:type])
+  end
+
   private
 
   def entry_params
