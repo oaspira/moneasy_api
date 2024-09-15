@@ -9,7 +9,7 @@ class Api::V1::EntriesController < ApplicationController
 
     @entries = Entry.all
     @entries = @entries.for_monthly_budget(@monthly_budget) if params[:reference_month].present?
-    @entries = @entries.for_entry_status(@entry_status) if params[:key].present?
+    @entries = @entries.for_entry_status(@entry_status) if params[:status].present?
     @entries = @entries.for_yearly_budget(@yearly_budget) if params[:reference_year].present?
 
     @entries
@@ -85,6 +85,6 @@ class Api::V1::EntriesController < ApplicationController
   end
 
   def set_entry_status
-    @entry_status = EntryStatus.find_by(key: params[:key])
+    @entry_status = EntryStatus.find_by(key: params[:status])
   end
 end
