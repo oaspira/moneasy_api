@@ -44,7 +44,7 @@ class Api::V1::MonthlyBudgetsController < ApplicationController
   end
 
   def monetize_value(value)
-    money = Money.new(value, 'USD')
+    money = Money.new(value, 'BRL')
     formatted_value = money.format(symbol: false, symbol_position: :before, decimal_mark: ',', thousands_separator: '.')
     "#{money.symbol} #{formatted_value}"
   end
