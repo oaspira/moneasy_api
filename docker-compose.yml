@@ -9,6 +9,8 @@ services:
     command: "bundle exec puma -C config/puma.rb"
     volumes:
       - ./:/rails
+    stdin_open: true
+    tty: true
 
   db:
     image: docker.io/library/postgres
