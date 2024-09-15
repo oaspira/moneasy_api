@@ -47,6 +47,12 @@ class Entry < ApplicationRecord
   belongs_to :entry_status
 
   # Delegates
+  with_options prefix: true do
+    delegate :name, to: :entry_type, allow_nil: true
+    delegate :first_name, to: :user, allow_nil: true
+    delegate :last_name, to: :user, allow_nil: true
+    delegate :name, to: :entry_status, allow_nil: true
+  end
 
   # Constants
 

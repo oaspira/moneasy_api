@@ -10,7 +10,7 @@ class Api::V1::EntriesController < ApplicationController
     @entries = @entries.for_monthly_budget(@monthly_budget) if params[:reference_month].present?
     @entries = @entries.for_entry_status(@entry_status) if params[:key].present?
 
-    render json: @entries, status: :ok
+    @entries
   end
 
   def show
