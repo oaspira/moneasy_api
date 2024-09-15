@@ -4,6 +4,9 @@ namespace :v1 do
   resources :entry_types, only: [:index, :show, :create, :update, :destroy]
   resources :entries, only: [:index, :show, :create, :update, :destroy]
   resources :monthly_budgets do
+    collection do
+      get :dashboard
+    end
     member do
       get :totals
     end

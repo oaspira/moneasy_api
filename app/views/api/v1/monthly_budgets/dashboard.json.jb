@@ -1,0 +1,14 @@
+{
+  balance: {
+    current: @current_balance,
+    last: @latest_balance,
+  },
+  profit: {
+    current: @current_profit,
+    last: @latest_profit,
+  },
+  loss: {
+    current: @current_loss,
+    last: @latest_loss,
+  },
+}

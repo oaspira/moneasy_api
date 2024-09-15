@@ -53,6 +53,10 @@ class MonthlyBudget < ApplicationRecord
     Money.new(total, "BRL").format
   end
 
+  def sum_by_type(type)
+    entries.for_entry_type(type).sum(:value)
+  end
+
   private
 
   # Validations
