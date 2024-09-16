@@ -4,7 +4,7 @@ class Api::V1::EntryCategoriesController < ApplicationController
   def index
     # authorize EntryCategory
 
-    @entry_categories = EntryCategory.all
+    @entry_categories = EntryCategory.order(:description)
     render json: @entry_categories, status: :ok
   end
 
