@@ -2,8 +2,15 @@ namespace :v1 do
   resources :entry_categories, only: [:index, :show, :create, :update, :destroy]
   resources :entry_statuses, only: [:index, :show]
   resources :entry_types, only: [:index, :show, :create, :update, :destroy]
-  resources :entries, only: [:index, :show, :create, :update, :destroy]
+  resources :entries, only: [:index, :show, :create, :update, :destroy] do
+    collection do
+      get :charts
+    end
+  end
   resources :monthly_budgets do
+    collection do
+      get :dashboard
+    end
     member do
       get :totals
     end

@@ -1,0 +1,20 @@
+@entries.map do |entry|
+  {
+    id: entry.id,
+    description: entry.description,
+    type: {
+      id: entry.entry_type_id,
+      name: entry.entry_type_name
+    },
+    value: entry.value,
+    due_date: entry.due_date,
+    creator: {
+      first_name: entry.user_first_name,
+      last_name: entry.user_last_name,
+    },
+    status: {
+      id: entry.entry_status_id,
+      name: entry.entry_status_name
+    }
+  }
+end

@@ -1,0 +1,28 @@
+services:
+  web:
+    image: moneasy-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    command: "bundle exec puma -C config/puma.rb"
+    volumes:
+      - ./:/rails
+    stdin_open: true
+    tty: true
+
+  db:
+    image: docker.io/library/postgres
+    container_name: postgres
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local

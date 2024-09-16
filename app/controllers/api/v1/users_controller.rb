@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: %i[show update destroy]
 
   def index
-    authorize User
+    # authorize User
 
     @users = User.all
     render json: @users, status: :ok
@@ -12,7 +12,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    authorize User
+    # authorize User
     @user = User.new(user_params)
 
     if @user.save
@@ -55,7 +55,7 @@ class Api::V1::UsersController < ApplicationController
     user = User.find_by(id: params[:id])
     return render json: { errors: t('activerecord.errors.messages.item_not_found') }, status: :not_found unless user
 
-    authorize user
+    # authorize user
     @user = user
   end
 end
